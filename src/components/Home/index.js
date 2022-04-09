@@ -4,6 +4,7 @@ import LogoTitle from '../../assets/images/logo-s.png'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import Logo from './Logo'
+import Loader from 'react-loaders'
 
 const Home = () => {
     
@@ -11,14 +12,15 @@ const Home = () => {
     const nameArray = ['k','u','t','a','y']
     const jobArray = ['w','e','b', ' ', 'd', 'e','v','e','l','o','p','e','r','.']
 
-    useEffect(() => {
-        return setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 4000)
-    }, [])
+    // useEffect(() => {
+    //     return setTimeout(() => {
+    //         setLetterClass('text-animate-hover')
+    //     }, 4000)
+    // }, [])
 
     return(
-        <div className="container home-page">
+        <>
+            <div className="container home-page">
             <div className="text-zone">
                 <h1>
                 <span className={letterClass}>H</span>
@@ -39,7 +41,9 @@ const Home = () => {
                 <Link to="/contact" className='flat-button'>CONTACT ME </Link>
             </div>
             <Logo />
-        </div>
+            </div>
+            <Loader type='pacman' />
+        </>
     )
 }
 
