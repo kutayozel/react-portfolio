@@ -2,41 +2,40 @@ import { useEffect, useRef, useState } from 'react'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
-// import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
+import {MapContainer} from 'react-leaflet'
 
 const Contact = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
-    // const refForm = useRef
+    const refForm = useRef()
 
-    // useEffect(() => {
-    //     return setTimeout(() => {
-    //         setLetterClass('text-animate-hover')
-    //     }, 3000)
-    // }, [])
+    useEffect(() => {
+        setTimeout(() => {
+            setLetterClass('text-animate-hover')
+        }, 3000)
+    }, [])
 
-    // const sendEmail = (e) => {
-    //     e.preventDefault()
+    const sendEmail = (e) => {
+        e.preventDefault()
 
-    //     emailjs
-    //         .sendForm(
-    //             'gmail',
-    //             'template_2n7gwlm',
-    //             refForm.current,
-    //             'b41GTwcq4txEehaXL'
-    //         )
-    //         .then(
-    //             () => {
-    //                 alert('Message sent')
-    //                 window.location.reload(false)
-    //             },
-    //             () => {
-    //                 alert('Failed to send message, try again')
-    //             }
-    //         )
-    // }
-
-    // ref={refForm} onSubmit={sendEmail}
+        emailjs
+            .sendForm(
+                'service_k1v4dvp',
+                'template_2n7gwlm',
+                refForm.current,
+                'b41GTwcq4txEehaXL'
+            )
+            .then(
+                () => {
+                    alert('Message successfully sent!')
+                    window.location.reload(false)
+                },
+                () => {
+                    alert('Failed to send the message, Please try again')
+                }
+            )
+    }
 
     return(
         <>
@@ -55,7 +54,7 @@ const Contact = () => {
                         don't hesitate to contact me using below form either.
                     </p>
                     <div className="contact-form">
-                        <form>
+                        <form ref={refForm} onSubmit={sendEmail}>
                             <ul>
                                 <li className="half">
                                     <input type="text" name='name' placeholder='Name' required/>
@@ -89,6 +88,19 @@ const Contact = () => {
                             </ul>
                         </form>
                     </div>
+                </div>
+                <div className="info-map">
+                    Kutay Ozel,
+                    <br />
+                    Turkey,
+                    <br />
+                    Ankara <br />
+                    <span>zelkutay@gmail.com</span>
+                </div>
+                <div className="map-wrap">
+                    <MapContainer center>
+
+                    </MapContainer>
                 </div>
             </div>
             <Loader type='pacman' />

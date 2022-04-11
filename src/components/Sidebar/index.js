@@ -3,8 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 import LogoS from '../../assets/images/logo-s.png'
 import LogoSubtitle from '../../assets/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faUser, faEnvelope, faAppleWhole} from '@fortawesome/free-solid-svg-icons'
-// import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import { faHome, faUser, faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import {faLinkedin,faGithub} from '@fortawesome/free-brands-svg-icons'
 
 const Sidebar = () => {
   return (
@@ -27,12 +27,12 @@ const Sidebar = () => {
         <ul>
             <li>
                 <a target="_blank" rel='noreferrer' href='https://www.linkedin.com/in/kutay-ozel-011688138/'>
-                    <FontAwesomeIcon icon={faAppleWhole} color="#4d4d4e" />
+                    <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
                 </a>
             </li>
             <li>
                 <a target="_blank" rel='noreferrer' href='https://github.com/kutayozel'>
-                    <FontAwesomeIcon icon={faAppleWhole} color="#4d4d4e" />
+                    <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
                 </a>
             </li>
         </ul>
