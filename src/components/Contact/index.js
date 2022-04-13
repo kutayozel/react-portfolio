@@ -3,7 +3,6 @@ import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import emailjs from '@emailjs/browser'
-import {MapContainer} from 'react-leaflet'
 
 const Contact = () => {
 
@@ -98,12 +97,9 @@ const Contact = () => {
                     <span>zelkutay@gmail.com</span>
                 </div>
                 <div className="map-wrap">
-                    <MapContainer center>
-
-                    </MapContainer>
                 </div>
             </div>
-            <Loader type='pacman' />
+            <Loader type='ball-scale-ripple-multiple' />
         </>
     )
 }
